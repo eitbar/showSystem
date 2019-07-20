@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>nlp功能体验</title>	
+	<style type = "text/css">
+		.selectstyle{
+			width: 80%;
+			height: 100px;
+			text-align:center;
+			margin: 10px auto;
+		}
+		.selectdiv{
+			width: 32%;
+			height: 100px;
+			background-color: #00BFFF;
+			color: #FFFFFF;
+			font-weight: bold;
+			font-size: 30px;
+			text-align: center;
+			line-height: 100px;
+			float: left;
+			margin-right: 1%;
+		}
+		.selectdiv a {
+			text-decoration:none;
+			out-line: none;
+			color: #FFFFFF;
+		}	
+		.selectdiv a:hover{
+			color:#000000;
+		}	
+	</style>
+</head>
+<body>
+    <div class = "selectstyle">
+		<div class = "selectdiv">
+			<a href="/home/lexicalAnalysis/">中文词法分析</a>
+		</div>
+		<div class = "selectdiv">xxxx</div>
+		<div class = "selectdiv">xxxx</div>
+	</div>
+	
+    {% block content %}
+    {% endblock %}
+</body>
+</html>

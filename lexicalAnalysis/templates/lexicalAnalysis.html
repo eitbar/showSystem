@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/> 
+	<style type = "text/css">
+		.title {
+			text-align: center;
+			width: 80%;
+			font-weight: bold;
+			font-size: 35px;
+			color:rgba(9,152,214,1.00);
+			margin: 50px auto 0px;
+		}
+		.textbody{
+			text-align: center;
+			width: 80%;
+			font-weight: bold;
+			font-size: 30px;
+			margin: 10px auto 0px;
+		}
+		.outputbody{
+			width: 80%;
+			border:1px solid;
+			border-color: #C8C8C8;
+			margin: 10px auto 0px;
+			font-size: 30px;
+			height: auto;
+		}
+		.ansblock{
+			border:1px solid;
+			border-color: #C8C8C8;
+			margin: 15px 0px 0px 15px;
+			padding: 8px 10px 8px 10px;
+			font-size: 30px;
+			float : left;
+			width: auto; 
+			height: 45px;
+		}
+		#submitbutton {
+			text-align: center;
+			width: 15%;
+			font-size: 30px;
+			margin: 10px auto 0px;
+		}
+		#inputtextarea{
+			width: 80%;
+			height: 200px;
+			background-color: rgba(245,245,245,0.50);
+			font-size: 30px;
+			margin: 10px auto 0px;	
+		}
+	</style>
+</head>
+<body>
+	{% include 'base.html' %}	
+	<div class="title">请输入一句话</div>
+ 
+	<form class="textbody" action="/home/lexicalAnalysis/" method="post" >
+		{% csrf_token %}
+		<div>
+		<textarea name="a" id = "inputtextarea">{{inputtext}}</textarea>
+		</div>
+		<div>
+		<input type="submit" id="submitbutton" value="提交">
+		</div>
+	</form>
+	<div class="title">
+		 中文分词结果
+	</div>
+	<div class = "outputbody">
+		{% for i in ans %}
+			<div class = "ansblock">
+			{{ i.word }} : <font color="#A0A0A0"> {{i.nature}} </font>
+			</div> 
+		{% endfor %}
+	</div> 
+</body>
+</html>
+
